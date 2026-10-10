@@ -1,0 +1,170 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "Izza Maulana Akbar, S.T. | Mechanical Engineer",
+  description = "Web Profile & Portofolio Profesional Izza Maulana Akbar, S.T. - Sarjana Teknik Mesin Universitas Trunodjoyo Madura, Mekanik di PT. Shou Fong Lastindo, Pemegang Hak Desain Industri Kemenkumham RI."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/images/profile.jpg" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Google Fonts Plus Jakarta Sans (Calm & Modern) & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Anti-flicker script for Theme & Language -->
+    <script is:inline>
+      const theme = localStorage.getItem('theme') || 'dark';
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+
+      const lang = localStorage.getItem('lang') || 'id';
+      document.documentElement.setAttribute('data-lang', lang);
+    </script>
+  </head>
+  <body class="bg-[#fafbfc] text-slate-800 dark:bg-[#070b12] dark:text-slate-100 min-h-screen relative overflow-x-hidden selection:bg-cyan-500/20 selection:text-cyan-800 dark:selection:text-cyan-200 font-sans transition-colors duration-300">
+    
+    <!-- Minimalist subtle grid -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+      <div class="absolute inset-0 minimal-grid"></div>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <div class="relative z-10 flex flex-col min-h-screen">
+      <slot />
+    </div>
+
+    <!-- Client-side script for Theme, Language, Scroll Reveal & Lightbox -->
+    <script>
+      function applyLanguage(currentLang: string) {
+        document.documentElement.setAttribute('data-lang', currentLang);
+        localStorage.setItem('lang', currentLang);
+
+        const idElements = document.querySelectorAll('.lang-id');
+        const enElements = document.querySelectorAll('.lang-en');
+
+        if (currentLang === 'en') {
+          idElements.forEach(el => el.classList.add('hidden'));
+          enElements.forEach(el => el.classList.remove('hidden'));
+        } else {
+          idElements.forEach(el => el.classList.remove('hidden'));
+          enElements.forEach(el => el.classList.add('hidden'));
+        }
+
+        const langDisplay = document.getElementById('current-lang-text');
+        if (langDisplay) {
+          langDisplay.textContent = currentLang.toUpperCase();
+        }
+      }
+
+      function toggleTheme() {
+        const isDark = document.documentElement.classList.contains('dark');
+        if (isDark) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const initialLang = localStorage.getItem('lang') || 'id';
+        applyLanguage(initialLang);
+
+        document.querySelectorAll('[data-toggle-lang]').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const cur = document.documentElement.getAttribute('data-lang') || 'id';
+            const next = cur === 'id' ? 'en' : 'id';
+            applyLanguage(next);
+          });
+        });
+
+        document.querySelectorAll('[data-toggle-theme]').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            toggleTheme();
+          });
+        });
+
+        // Scroll Reveal Observer
+        const revealElements = document.querySelectorAll('.reveal-on-scroll');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -30px 0px'
+        });
+
+        revealElements.forEach(el => observer.observe(el));
+
+        // Lightbox Modal
+        const modal = document.getElementById('lightbox-modal');
+        const modalImg = document.getElementById('lightbox-img') as HTMLImageElement;
+        const modalTitle = document.getElementById('lightbox-title');
+        const modalDesc = document.getElementById('lightbox-desc');
+        const closeBtn = document.getElementById('lightbox-close');
+
+        if (modal && modalImg && closeBtn) {
+          document.querySelectorAll('[data-lightbox]').forEach(el => {
+            el.addEventListener('click', (e) => {
+              e.preventDefault();
+              const target = el as HTMLElement;
+              const src = target.getAttribute('data-img') || '';
+              const title = target.getAttribute('data-title') || 'Detail Visual';
+              const desc = target.getAttribute('data-desc') || '';
+
+              modalImg.src = src;
+              if (modalTitle) modalTitle.textContent = title;
+              if (modalDesc) modalDesc.textContent = desc;
+
+              modal.classList.remove('hidden');
+              modal.classList.add('flex');
+              document.body.style.overflow = 'hidden';
+            });
+          });
+
+          const closeModal = () => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+          };
+
+          closeBtn.addEventListener('click', closeModal);
+          modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+          });
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

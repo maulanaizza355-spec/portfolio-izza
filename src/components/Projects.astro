@@ -1,0 +1,325 @@
+---
+// Projects.astro
+---
+
+<section id="projects" class="py-16 md:py-20 relative border-b border-slate-200/80 dark:border-slate-800/80">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    
+    <!-- Section Header -->
+    <div class="space-y-2 mb-10 reveal-on-scroll">
+      <div class="text-xs font-mono text-cyan-600 dark:text-cyan-400 font-bold tracking-wider">
+        04 // <span class="lang-id">PERANCANGAN CAD & GAMBAR TEKNIK</span><span class="lang-en hidden">CAD MODELING & ENGINEERING DRAWINGS</span>
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+        <span class="lang-id">Koleksi Proyek CAD & Rekayasa</span>
+        <span class="lang-en hidden">Engineering CAD Projects</span>
+      </h2>
+    </div>
+
+    <!-- Category Filter Buttons -->
+    <div class="flex flex-wrap items-center gap-2 mb-8 font-mono text-xs reveal-on-scroll" id="project-filters">
+      <button class="filter-btn active px-3.5 py-1.5 rounded-lg font-bold transition bg-slate-900 dark:bg-cyan-500 text-white dark:text-slate-950" data-filter="all">
+        <span class="lang-id">Semua (6)</span>
+        <span class="lang-en hidden">All (6)</span>
+      </button>
+      <button class="filter-btn px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-cyan-500 transition" data-filter="cad">
+        CAD 3D & 2D
+      </button>
+      <button class="filter-btn px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-cyan-500 transition" data-filter="agro">
+        <span class="lang-id">Mesin Pertanian</span>
+        <span class="lang-en hidden">Agro Machinery</span>
+      </button>
+      <button class="filter-btn px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-cyan-500 transition" data-filter="workshop">
+        <span class="lang-id">Fabrikasi Bengkel</span>
+        <span class="lang-en hidden">Workshop Fabrication</span>
+      </button>
+    </div>
+
+    <!-- Project Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="project-grid">
+      
+      <!-- Project 1: Vertical Pressure Vessel -->
+      <div class="project-card card-minimal-hover flex flex-col reveal-on-scroll" data-category="cad">
+        <div 
+          class="relative aspect-video bg-slate-100 dark:bg-slate-950 overflow-hidden cursor-pointer rounded-t-2xl group"
+          data-lightbox
+          data-img="/images/cad_pressure_vessel_3d.png"
+          data-title="Bejana Tekan Vertikal (Vertical Pressure Vessel) - 3D Autodesk Inventor"
+          data-desc="Pemodelan 3D bejana tekan silindris vertikal bertekanan tinggi lengkap dengan nozzle, manhole, dan struktur kaki penyangga."
+        >
+          <img 
+            src="/images/cad_pressure_vessel_3d.png" 
+            alt="Pressure Vessel 3D" 
+            class="w-full h-full object-contain p-2 group-hover:scale-105 transition duration-500"
+          />
+          <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-600 dark:text-cyan-300 border border-cyan-500/30 text-[10px] font-mono font-bold">
+            INVENTOR
+          </span>
+        </div>
+
+        <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+          <div>
+            <div class="text-[11px] font-mono text-slate-400">PROYEK CAD #01</div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white mt-0.5">
+              Bejana Tekan Vertikal (Pressure Vessel)
+            </h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+              <span class="lang-id">Perancangan 3D shell silindris, ellipsoidal head, nozzle, manhole, dan support legs. Dilengkapi gambar detail fabrikasi 2D ortogonal.</span>
+              <span class="lang-en hidden">3D cylindrical shell, ellipsoidal head, nozzle connections, inspection manhole, and structural legs with standard 2D orthographic drawings.</span>
+            </p>
+          </div>
+
+          <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-mono">
+            <button 
+              data-lightbox 
+              data-img="/images/cad_pressure_vessel_2d.png" 
+              data-title="Gambar Kerja 2D Detail Bejana Tekan Vertikal" 
+              data-desc="Gambar teknik ortogonal skala 1:77 dengan etiket resmi Universitas Trunodjoyo Madura."
+              class="text-cyan-600 dark:text-cyan-400 hover:underline flex items-center gap-1 font-bold"
+            >
+              <span>Gambar 2D Ortogonal →</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: Caster Wheel Assembly -->
+      <div class="project-card card-minimal-hover flex flex-col reveal-on-scroll" data-category="cad">
+        <div 
+          class="relative aspect-video bg-slate-100 dark:bg-slate-950 overflow-hidden cursor-pointer rounded-t-2xl group"
+          data-lightbox
+          data-img="/images/cad_caster_wheel_3d.png"
+          data-title="Roda Caster Industri (Industrial Caster Wheel Assembly)"
+          data-desc="Hasil akhir assembly 3D roda caster dengan sistem pengunci mekanis dan bantalan karet berdaya tahan tinggi."
+        >
+          <img 
+            src="/images/cad_caster_wheel_3d.png" 
+            alt="Caster Wheel 3D" 
+            class="w-full h-full object-contain p-2 group-hover:scale-105 transition duration-500"
+          />
+          <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-600 dark:text-cyan-300 border border-cyan-500/30 text-[10px] font-mono font-bold">
+            INVENTOR
+          </span>
+        </div>
+
+        <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+          <div>
+            <div class="text-[11px] font-mono text-slate-400">PROYEK CAD #02</div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white mt-0.5">
+              Roda Caster Industri (Heavy Duty)
+            </h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+              <span class="lang-id">Perancangan rakitan mekanik roda caster: pelat baja, body penyangga, baut poros AISI 1040, mekanisme rem, dan ban karet.</span>
+              <span class="lang-en hidden">Heavy-duty caster assembly: base plate, wheel body, AISI 1040 axle bolt, polypropylene brake, and rubber wheel tread.</span>
+            </p>
+          </div>
+
+          <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-mono">
+            <button 
+              data-lightbox 
+              data-img="/images/cad_caster_wheel_exploded.png" 
+              data-title="Exploded View & Parts List (BOM) Roda Caster" 
+              data-desc="Gambar urutan perakitan exploded view 12 part dan Bill of Materials Universitas Trunodjoyo Madura."
+              class="text-cyan-600 dark:text-cyan-400 hover:underline flex items-center gap-1 font-bold"
+            >
+              <span>Exploded & BOM (12 Part) →</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Mesin Pengupas Kulit Salak -->
+      <div class="project-card card-minimal-hover flex flex-col reveal-on-scroll" data-category="agro">
+        <div 
+          class="relative aspect-video bg-slate-100 dark:bg-slate-950 overflow-hidden cursor-pointer rounded-t-2xl group"
+          data-lightbox
+          data-img="/images/cad_pengupas_salak_3d.png"
+          data-title="Mesin Pengupas Kulit Salak (Manual Crank Mechanism)"
+          data-desc="Rancang bangun mesin pengupas kulit buah salak ergonomis bertenaga engkol manual untuk UMKM pertanian."
+        >
+          <img 
+            src="/images/cad_pengupas_salak_3d.png" 
+            alt="Pengupas Salak 3D" 
+            class="w-full h-full object-contain p-2 group-hover:scale-105 transition duration-500"
+          />
+          <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-amber-500/20 text-amber-600 dark:text-amber-400 border border-amber-500/30 text-[10px] font-mono font-bold">
+            MESIN AGRO
+          </span>
+        </div>
+
+        <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+          <div>
+            <div class="text-[11px] font-mono text-slate-400">PROYEK MESIN #03</div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white mt-0.5">
+              Mesin Pengupas Kulit Salak Manual
+            </h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+              <span class="lang-id">Mekanisme engkol putar manual dengan silinder pisau baja karbon, bearing BS 292, saluran pengumpan hopper, dan rangka kayu oak.</span>
+              <span class="lang-en hidden">Manual crank peeler mechanism with carbon steel blade cylinder, BS 292 bearings, inclined feeding hopper, and oak wood frame.</span>
+            </p>
+          </div>
+
+          <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-mono">
+            <button 
+              data-lightbox 
+              data-img="/images/cad_pengupas_salak_exploded.png" 
+              data-title="Gambar Isometri & Parts List Mesin Pengupas Kulit Salak" 
+              data-desc="Detail rakitan isometri dan 8 komponen utama (Universitas Trunodjoyo Madura)."
+              class="text-cyan-600 dark:text-cyan-400 hover:underline flex items-center gap-1 font-bold"
+            >
+              <span>Isometri & BOM →</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: Mesin Pemisah Biji Salak -->
+      <div class="project-card card-minimal-hover flex flex-col reveal-on-scroll" data-category="agro">
+        <div 
+          class="relative aspect-video bg-slate-100 dark:bg-slate-950 overflow-hidden cursor-pointer rounded-t-2xl group"
+          data-lightbox
+          data-img="/images/cad_pemisah_salak_3d.png"
+          data-title="Mesin Pemisah Biji Salak Bermotor (Motorized Slider-Crank Mechanism)"
+          data-desc="Rancang bangun sistem transmisi motor listrik, puli grooved, sabuk V-belt, dan batang engkol pendorong biji salak."
+        >
+          <img 
+            src="/images/cad_pemisah_salak_3d.png" 
+            alt="Pemisah Biji Salak 3D" 
+            class="w-full h-full object-contain p-2 group-hover:scale-105 transition duration-500"
+          />
+          <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-amber-500/20 text-amber-600 dark:text-amber-400 border border-amber-500/30 text-[10px] font-mono font-bold">
+            TRANSMISI MOTOR
+          </span>
+        </div>
+
+        <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+          <div>
+            <div class="text-[11px] font-mono text-slate-400">PROYEK MESIN #04</div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white mt-0.5">
+              Mesin Pemisah Biji Salak Otomatis
+            </h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+              <span class="lang-id">Transmisi motor listrik, reduksi puli ganda & V-belt, mekanisme translasi crank-slider, dan chute stainless steel tahan karat.</span>
+              <span class="lang-en hidden">Electric motor transmission, dual pulley & V-belt reduction, crank-slider translational mechanism, and stainless steel separator chute.</span>
+            </p>
+          </div>
+
+          <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-mono">
+            <button 
+              data-lightbox 
+              data-img="/images/cad_pemisah_salak_exploded.png" 
+              data-title="Gambar Isometri & Parts List Mesin Pemisah Biji Salak" 
+              data-desc="Detail rakitan isometri dan 11 komponen utama (Universitas Trunodjoyo Madura)."
+              class="text-cyan-600 dark:text-cyan-400 hover:underline flex items-center gap-1 font-bold"
+            >
+              <span>Isometri & BOM →</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5: Fabrikasi & Pengelasan SMAW -->
+      <div class="project-card card-minimal-hover flex flex-col reveal-on-scroll" data-category="workshop">
+        <div 
+          class="relative aspect-video bg-slate-100 dark:bg-slate-950 overflow-hidden cursor-pointer rounded-t-2xl group"
+          data-lightbox
+          data-img="/images/praktikum_pengelasan.png"
+          data-title="Fabrikasi Struktur Logam & Pengelasan Busur Listrik (SMAW)"
+          data-desc="Dokumentasi fabrikasi rangka baja hollow di area bengkel manufaktur dengan teknik pengelasan terlindung."
+        >
+          <img 
+            src="/images/praktikum_pengelasan.png" 
+            alt="Fabrikasi Pengelasan" 
+            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+          />
+          <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 text-[10px] font-mono font-bold">
+            BENGKEL
+          </span>
+        </div>
+
+        <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+          <div>
+            <div class="text-[11px] font-mono text-slate-400">MANUFAKTUR #05</div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white mt-0.5">
+              Fabrikasi Rangka Mesin & Pengelasan SMAW
+            </h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+              <span class="lang-id">Fabrikasi struktur baja hollow, perakitan sambungan las busur listrik (SMAW), pengujian dimensi, dan penegakan SOP K3 bengkel.</span>
+              <span class="lang-en hidden">Hollow steel structural fabrication, SMAW electric arc welding assembly, squareness inspection, and workshop HSE compliance.</span>
+            </p>
+          </div>
+
+          <div class="pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-mono text-slate-400">
+            <span>SMAW • Baja Hollow • K3 Bengkel</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6: 3D Printing Ender -->
+      <div class="project-card card-minimal-hover flex flex-col reveal-on-scroll" data-category="workshop">
+        <div 
+          class="relative aspect-video bg-slate-100 dark:bg-slate-950 overflow-hidden cursor-pointer rounded-t-2xl group"
+          data-lightbox
+          data-img="/images/3d_printing_ender.png"
+          data-title="Rapid Prototyping & Aditif Manufaktur (3D Printing Ender)"
+          data-desc="Penerapan mesin 3D printer FDM dengan PrusaSlicer untuk menghasilkan komponen prototipe fungsional berpresisi dimensi tinggi."
+        >
+          <img 
+            src="/images/3d_printing_ender.png" 
+            alt="3D Printing Ender" 
+            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+          />
+          <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-600 dark:text-cyan-300 border border-cyan-500/30 text-[10px] font-mono font-bold">
+            PROTOTYPING
+          </span>
+        </div>
+
+        <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+          <div>
+            <div class="text-[11px] font-mono text-slate-400">MANUFAKTUR #06</div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white mt-0.5">
+              Rapid Prototyping 3D Printing FDM
+            </h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+              <span class="lang-id">Penyusunan toolpath g-code di PrusaSlicer, pengaturan densitas infill, dan kalibrasi mesin FDM Ender untuk prototipe mekanikal.</span>
+              <span class="lang-en hidden">G-code toolpath slicing via PrusaSlicer, infill density settings, and FDM 3D printer calibration for rapid functional prototypes.</span>
+            </p>
+          </div>
+
+          <div class="pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-mono text-slate-400">
+            <span>PrusaSlicer • Ender FDM • PLA/PETG</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.classList.remove('bg-slate-900', 'dark:bg-cyan-500', 'text-white', 'dark:text-slate-950', 'active', 'font-bold');
+        b.classList.add('bg-slate-100', 'dark:bg-slate-900', 'text-slate-600', 'dark:text-slate-300');
+      });
+      btn.classList.add('bg-slate-900', 'dark:bg-cyan-500', 'text-white', 'dark:text-slate-950', 'active', 'font-bold');
+      btn.classList.remove('bg-slate-100', 'dark:bg-slate-900', 'text-slate-600', 'dark:text-slate-300');
+
+      const filter = btn.getAttribute('data-filter');
+
+      projectCards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (filter === 'all' || cat === filter) {
+          (card as HTMLElement).style.display = 'flex';
+        } else {
+          (card as HTMLElement).style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
